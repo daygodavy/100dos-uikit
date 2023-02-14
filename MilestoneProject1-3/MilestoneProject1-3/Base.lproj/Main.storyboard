@@ -9,24 +9,9 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MilestoneProject1_3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="44" y="-2"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="C5Z-CM-e7v">
             <objects>
-                <tableViewController id="55Y-t7-Fu9" customClass="ViewController" customModule="MilestoneProject1_3" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="List" id="55Y-t7-Fu9" customClass="ViewController" customModule="MilestoneProject1_3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bDx-0S-2M2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,6 +45,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNb-Mh-iVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2182.4427480916029" y="7.746478873239437"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="i5c-5P-3qs">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="6CD-4Y-O9Z" customClass="DetailViewController" customModule="MilestoneProject1_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ymt-Xb-0mz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Jf-67-Krr">
+                                <rect key="frame" x="0.0" y="279" width="393" height="294"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d1d-vz-W1Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Jf-67-Krr" firstAttribute="top" secondItem="d1d-vz-W1Q" secondAttribute="top" constant="220" id="nwh-J3-cbN"/>
+                            <constraint firstItem="9Jf-67-Krr" firstAttribute="centerX" secondItem="d1d-vz-W1Q" secondAttribute="centerX" id="xUi-gs-Gew"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="9Jf-67-Krr" id="gjp-0O-5U7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocy-rk-gM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3217.5572519083967" y="7.746478873239437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iCq-em-T5k">
