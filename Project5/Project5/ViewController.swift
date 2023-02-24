@@ -58,14 +58,14 @@ class ViewController: UITableViewController {
                 if isReal(word: lowerAnswer) {
                     if isSame(word: lowerAnswer) {
                         if isShort(word: lowerAnswer) {
-                            usedWords.insert(answer, at: 0)
+                            usedWords.insert(lowerAnswer, at: 0)
                             
                             let indexPath = IndexPath(row: 0, section: 0)
                             tableView.insertRows(at: [indexPath], with: .automatic)
                             
                             return
                         } else {
-                            showErrorMessage(errorTitle: "Word too short", errorMessage: "Must be at least 4 letters")
+                            showErrorMessage(errorTitle: "Word too short", errorMessage: "Must be at least 3 letters")
                         }
                     } else {
                         showErrorMessage(errorTitle: "Word is the same", errorMessage: "You can't use the same word!")
@@ -89,7 +89,7 @@ class ViewController: UITableViewController {
     }
     
     func isShort(word: String) -> Bool {
-        return !(word.count < 4)
+        return !(word.count < 3)
     }
     
     func isSame(word: String) -> Bool {
