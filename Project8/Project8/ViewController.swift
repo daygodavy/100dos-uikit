@@ -121,6 +121,10 @@ class ViewController: UIViewController {
                 letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
                 let frame = CGRect(x: column * width, y: row * height, width: width, height: height)
                 letterButton.frame = frame
+                letterButton.layer.borderWidth = 1
+                letterButton.layer.borderColor = UIColor.gray.cgColor
+                letterButton.layer.cornerRadius = 50
+                letterButton.layer.masksToBounds = true
                 buttonsView.addSubview(letterButton)
                 letterButtons.append(letterButton)
             }
@@ -152,12 +156,18 @@ class ViewController: UIViewController {
             
             currentAnswer.text = ""
             score += 1
-            
-            if score % 7 == 0 {
+  
+            if solutionPosition == solutions.count-1 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            let ac = UIAlertController(title: "INCORRECT ANSWER", message: "Please try again", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "close", style: .cancel))
+            present(ac, animated: true)
+            clearTapped(nil)
+            score -= 1
         }
     }
     
@@ -172,7 +182,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func clearTapped(_ sender: UIButton) {
+    @objc func clearTapped(_ sender: UIButton?) {
         currentAnswer.text = ""
         for button in activatedButtons {
             button.isHidden = false
