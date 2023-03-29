@@ -17,6 +17,10 @@ class ViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recommendTapped))
         
+        performSelector(inBackground: #selector(importPhotos), with: nil)
+    }
+    
+    @objc func importPhotos() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -28,7 +32,6 @@ class ViewController: UITableViewController {
             }
         }
         pictures = pictures.sorted()
-
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
