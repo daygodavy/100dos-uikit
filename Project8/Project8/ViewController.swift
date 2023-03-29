@@ -133,7 +133,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadLevel()
+        performSelector(inBackground: #selector(loadLevel), with: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -175,7 +175,7 @@ class ViewController: UIViewController {
         level += 1
         
         solutions.removeAll(keepingCapacity: true)
-        loadLevel()
+        performSelector(inBackground: #selector(loadLevel), with: nil)
         
         for button in letterButtons {
             button.isHidden = false
@@ -190,7 +190,7 @@ class ViewController: UIViewController {
         activatedButtons.removeAll()
     }
     
-    func loadLevel() {
+    @objc func loadLevel() {
         var clueString = ""
         var solutionsString = ""
         var letterBits = [String]()
@@ -216,13 +216,16 @@ class ViewController: UIViewController {
                 }
             }
         }
-        cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
-        answerLabel.text = solutionsString.trimmingCharacters(in: .whitespacesAndNewlines)
-        letterButtons.shuffle()
         
-        if letterButtons.count == letterBits.count {
-            for i in 0..<letterButtons.count {
-                letterButtons[i].setTitle(letterBits[i], for: .normal)
+        DispatchQueue.main.async {
+            self.cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
+            self.answerLabel.text = solutionsString.trimmingCharacters(in: .whitespacesAndNewlines)
+            self.letterButtons.shuffle()
+            
+            if self.letterButtons.count == letterBits.count {
+                for i in 0..<self.letterButtons.count {
+                    self.letterButtons[i].setTitle(letterBits[i], for: .normal)
+                }
             }
         }
     }
