@@ -50,19 +50,24 @@ class ViewController: UITableViewController {
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         ac.addAction(
             UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-                guard let self = self else { return }
                 if let filteredString = ac.textFields?.first?.text?.trimmingCharacters(in: .whitespaces) {
-                    self.filteredPetitions = self.petitions.filter { petition in
-                        let titleMatch = petition.title.localizedCaseInsensitiveContains(filteredString)
-                        let bodyMatch = petition.body.localizedCaseInsensitiveContains(filteredString)
-                        return titleMatch || bodyMatch
+                    guard let self = self else { return }
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        self.filteredPetitions = self.petitions.filter { petition in
+                            petition.title.localizedCaseInsensitiveContains(filteredString)
+                        }
                     }
-                    self.tableView.reloadData()
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         )
         present(ac, animated: true)
     }
+    
+    
     
     @objc func showCredits() {
         let ac = UIAlertController(title: "Credits", message: "This data comes from the We The People API of the Whitehouse.", preferredStyle: .alert)
@@ -81,7 +86,6 @@ class ViewController: UITableViewController {
         
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonPetitions.results
-            filteredPetitions = petitions
             filteredPetitions = petitions
             
             tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
