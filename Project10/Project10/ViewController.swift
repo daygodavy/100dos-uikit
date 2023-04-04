@@ -65,17 +65,33 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let person = people[indexPath.item]
-        let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
-        ac.addTextField()
         
-        ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
-            guard let newName = ac?.textFields?[0].text else { return }
-            person.name = newName
+        let initAC = UIAlertController(title: "Selected \(person.name)", message: "Would you like to rename or delete this person?", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Rename", style: .default) { [weak self] _ in
+            let ac1 = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
+            ac1.addTextField()
+            
+            ac1.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac1] _ in
+                guard let newName = ac1?.textFields?[0].text else { return }
+                person.name = newName
+                self?.collectionView.reloadData()
+            })
+            
+            ac1.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            self?.present(ac1, animated: true)
+        }
+        
+        let action2 = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            self?.people.remove(at: indexPath.item)
             self?.collectionView.reloadData()
-        })
+        }
         
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        present(ac, animated: true)
+        let action3 = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        initAC.addAction(action1)
+        initAC.addAction(action2)
+        initAC.addAction(action3)
+        present(initAC, animated: true)
     }
 
 }
