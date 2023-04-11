@@ -79,6 +79,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 box.position = location
                 box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
                 box.physicsBody?.isDynamic = false
+                box.name = "box"
                 addChild(box)
             } else {
                 // create a ball
@@ -146,6 +147,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             score -= 1
             destroy(ball: ball)
         }
+        // Challenge 3: remove obstacle when ball makes contact
+        else if object.name == "box" {
+            object.removeFromParent()
+        }
     }
     
     func destroy(ball: SKNode) {
@@ -159,6 +164,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
+        
         
         if nodeA.name == "ball" {
             collision(between: nodeA, object: nodeB)
