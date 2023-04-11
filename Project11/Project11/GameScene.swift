@@ -82,13 +82,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(box)
             } else {
                 // create a ball
-//                let ball = SKSpriteNode(imageNamed: "ballRed")
+                // Challenge 2: force Y position of ball to top of screen (Y: 700)
+                let ballLocation = CGPoint(x: location.x, y: 700)
+                // Challenge 1: randomize ball color
                 if let ballColor = ballColors.randomElement() {
                     let ball = SKSpriteNode(imageNamed: ballColor)
                     ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                     ball.physicsBody?.restitution = 0.4
                     ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
-                    ball.position = location
+                    ball.position = ballLocation
                     ball.name = "ball"
                     addChild(ball)
                 }
