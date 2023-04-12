@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     var pictures =  [String]()
+    var picturesViewCount = [String: Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,10 @@ class ViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recommendTapped))
         
         performSelector(inBackground: #selector(importPhotos), with: nil)
+        
+        let userDefaults = UserDefaults.standard
+        picturesViewCount = userDefaults.object(forKey: "ViewCount") as? [String: Int] ?? [String: Int]()
+        
     }
     
     @objc func importPhotos() {
@@ -40,13 +45,17 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        cell.textLabel?.text = "Picture \(indexPath.row + 1) of \(pictures.count)"
+        cell.textLabel?.text = "Picture \(indexPath.row + 1) of \(pictures.count) - View count: \(picturesViewCount[pictures[indexPath.row], default: 0])"
+        cell.detailTextLabel?.text = "View count: \(picturesViewCount[pictures[indexPath.row], default: 0])"
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
+            picturesViewCount[pictures[indexPath.row], default: 0] += 1
+            saveViewCount()
+            tableView.reloadData()
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -58,7 +67,11 @@ class ViewController: UITableViewController {
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
         
-        
+    }
+    
+    func saveViewCount() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(picturesViewCount, forKey: "ViewCount")
     }
 }
 
