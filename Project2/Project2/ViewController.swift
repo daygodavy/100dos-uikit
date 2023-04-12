@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var correctAnswer = 0
     var questionsAsked = 0
     
+    var highScore = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         countries += ["estonia", "france", "germany",
@@ -35,6 +37,9 @@ class ViewController: UIViewController {
         button1.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         button2.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         button3.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        let userDefaults = UserDefaults.standard
+        highScore = userDefaults.object(forKey: "highScore") as? Int ?? 0
         
         // askQuestion(action: nil)
         askQuestion()
@@ -69,11 +74,18 @@ class ViewController: UIViewController {
             score -= 1
         }
         
+        var endMessage = "Game Over"
         if questionsAsked == 10 {
-            let ac = UIAlertController(title: title, message: "10 Questions Completed: Your score is \(score)", preferredStyle: .alert)
+            if score > highScore {
+                highScore = score
+                saveHighScore()
+                endMessage = "10 Questions Completed: new high score is \(score)"
+            } else {
+                endMessage = "10 Questions Completed: your score is \(score)"
+            }
+            let ac = UIAlertController(title: title, message: endMessage, preferredStyle: .alert)
             
             ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-            
             present(ac, animated: true)
             questionsAsked = 0
         } else {
@@ -84,6 +96,11 @@ class ViewController: UIViewController {
             present(ac, animated: true)
         }
         
+    }
+    
+    func saveHighScore() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(highScore, forKey: "highScore")
     }
     
 }
