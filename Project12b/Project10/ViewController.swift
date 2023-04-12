@@ -13,6 +13,17 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        
+        let defaults = UserDefaults.standard
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            } catch {
+                print("Failed to load people")
+            }
+        }
     }
     
     @objc func addNewPerson() {
@@ -31,8 +42,8 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         }
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
+        save()
         collectionView.reloadData()
-        
         
         dismiss(animated: true)
     }
@@ -40,6 +51,16 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(people) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("Failed to save people.")
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,6 +95,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
             ac1.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac1] _ in
                 guard let newName = ac1?.textFields?[0].text else { return }
                 person.name = newName
+                self?.save()
                 self?.collectionView.reloadData()
             })
             
@@ -83,6 +105,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         
         let action2 = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
             self?.people.remove(at: indexPath.item)
+            self?.save()
             self?.collectionView.reloadData()
         }
         
