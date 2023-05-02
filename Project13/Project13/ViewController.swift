@@ -23,6 +23,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         title = "Instafilter"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
         
+        intensity.value = 0
+        
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
     }
@@ -71,7 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func changeFilter(_ sender: UIButton) {
-        let ac = UIAlertController(title: "Choose Filter", message: nil, preferredStyle: .actionSheet)
+        let ac = UIAlertController(title: currentFilter.name, message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIPixellate", style: .default, handler: setFilter))
@@ -96,7 +98,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             present(imageError, animated: true)
             return
         }
-        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     
