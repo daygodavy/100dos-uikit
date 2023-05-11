@@ -14,6 +14,8 @@
 		5B5E59DA2A0D960D00881219 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E59D82A0D960D00881219 /* Main.storyboard */; };
 		5B5E59DC2A0D960F00881219 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E59DB2A0D960F00881219 /* Assets.xcassets */; };
 		5B5E59DF2A0D960F00881219 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E59DD2A0D960F00881219 /* LaunchScreen.storyboard */; };
+		5B5E59E72A0DA60A00881219 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E59E52A0DA60A00881219 /* explosion.sks */; };
+		5B5E59E82A0DA60A00881219 /* starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E59E62A0DA60A00881219 /* starfield.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		5B5E59D92A0D960D00881219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B5E59DB2A0D960F00881219 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5E59DE2A0D960F00881219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B5E59E52A0DA60A00881219 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = explosion.sks; path = "../../HackingWithSwift-main/Classic/project17-files/Content/explosion.sks"; sourceTree = "<group>"; };
+		5B5E59E62A0DA60A00881219 /* starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = starfield.sks; path = "../../HackingWithSwift-main/Classic/project17-files/Content/starfield.sks"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				5B5E59D82A0D960D00881219 /* Main.storyboard */,
 				5B5E59DB2A0D960F00881219 /* Assets.xcassets */,
 				5B5E59DD2A0D960F00881219 /* LaunchScreen.storyboard */,
+				5B5E59E52A0DA60A00881219 /* explosion.sks */,
+				5B5E59E62A0DA60A00881219 /* starfield.sks */,
 			);
 			path = Project17;
 			sourceTree = "<group>";
@@ -129,6 +135,8 @@
 				5B5E59DA2A0D960D00881219 /* Main.storyboard in Resources */,
 				5B5E59D12A0D960D00881219 /* GameScene.sks in Resources */,
 				5B5E59DC2A0D960F00881219 /* Assets.xcassets in Resources */,
+				5B5E59E72A0DA60A00881219 /* explosion.sks in Resources */,
+				5B5E59E82A0DA60A00881219 /* starfield.sks in Resources */,
 				5B5E59DF2A0D960F00881219 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
