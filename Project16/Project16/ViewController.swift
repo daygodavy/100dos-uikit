@@ -25,6 +25,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
   
         mapView.addAnnotations([london, oslo, paris, rome, washington])
         
+        // CHALLENGE 2: create button for user to change map type
         createMapTypeBtn()
     }
     
