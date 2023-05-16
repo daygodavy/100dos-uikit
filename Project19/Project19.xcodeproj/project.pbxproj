@@ -18,6 +18,7 @@
 		5B5E5A352A1327A200881219 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5A342A1327A200881219 /* ActionViewController.swift */; };
 		5B5E5A382A1327A200881219 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5A362A1327A200881219 /* MainInterface.storyboard */; };
 		5B5E5A3C2A1327A200881219 /* Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5B5E5A2D2A1327A200881219 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5B5E5A422A13355100881219 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5A412A13355100881219 /* Action.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		5B5E5A342A1327A200881219 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		5B5E5A372A1327A200881219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5B5E5A392A1327A200881219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B5E5A412A13355100881219 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				5B5E5A342A1327A200881219 /* ActionViewController.swift */,
 				5B5E5A362A1327A200881219 /* MainInterface.storyboard */,
 				5B5E5A392A1327A200881219 /* Info.plist */,
+				5B5E5A412A13355100881219 /* Action.js */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5E5A422A13355100881219 /* Action.js in Resources */,
 				5B5E5A332A1327A200881219 /* Media.xcassets in Resources */,
 				5B5E5A382A1327A200881219 /* MainInterface.storyboard in Resources */,
 			);
