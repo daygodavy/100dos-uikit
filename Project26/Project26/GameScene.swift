@@ -5,6 +5,7 @@
 //  Created by Davy Chuon on 6/5/23.
 //
 
+import CoreMotion
 import SpriteKit
 
 enum CollisionTypes: UInt32 {
@@ -17,6 +18,9 @@ enum CollisionTypes: UInt32 {
 
 class GameScene: SKScene {
     var player: SKSpriteNode!
+    var lastTouchPosition: CGPoint?
+    
+    var motionManager: CMMotionManager?
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
@@ -29,6 +33,40 @@ class GameScene: SKScene {
         createPlayer()
         
         physicsWorld.gravity = .zero
+        
+        motionManager = CMMotionManager()
+        motionManager?.startAccelerometerUpdates()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        lastTouchPosition = location
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        lastTouchPosition = location
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lastTouchPosition = nil
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        #if targetEnvironment(simulator)
+        if let lastTouchPosition = lastTouchPosition {
+            let diff = CGPoint(x: lastTouchPosition.x - player.position.x, y: lastTouchPosition.y - player.position.y)
+            physicsWorld.gravity = CGVector(dx: diff.x / 100, dy: diff.y / 100)
+        }
+        #else
+        if let accelerometerData = motionManager?.accelerometerData {
+            // x and y are switched since device in landscape mode; hence coordinates are flipped
+            // -50 and 50 since left and right are also inverted
+            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * -50, dy: accelerometerData.acceleration.x * 50)
+        }
+        #endif
     }
     
     func loadLevel() {
@@ -103,6 +141,7 @@ class GameScene: SKScene {
     func createPlayer() {
         player = SKSpriteNode(imageNamed: "player")
         player.position = CGPoint(x: 96, y: 672)
+        player.zPosition = 1
         
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width / 2)
         player.physicsBody?.allowsRotation = false
