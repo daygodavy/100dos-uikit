@@ -34,6 +34,8 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     
     func setDefaultTitle() {
         title = "Multibrowser"
+        
+        addressBar.placeholder = "Enter URL"
     }
     
     func selectWebView(_ webView: WKWebView) {
@@ -49,8 +51,14 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let webView = activeWebView, let address = addressBar.text {
-            if let url = URL(string: address) {
-                webView.load(URLRequest(url: url))
+            if address.hasPrefix("https://") {
+                if let url = URL(string: address) {
+                    webView.load(URLRequest(url: url))
+                }
+            } else {
+                if let url = URL(string: "https://" + address) {
+                    webView.load(URLRequest(url: url))
+                }
             }
         }
         
