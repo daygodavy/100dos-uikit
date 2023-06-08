@@ -19,6 +19,7 @@
 		5B5E5BFC2A3268FC00881219 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */; };
 		5B5E5BFE2A32777D00881219 /* Whistle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BFD2A32777D00881219 /* Whistle.swift */; };
 		5B5E5C002A32804F00881219 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BFF2A32804F00881219 /* ResultsViewController.swift */; };
+		5B5E5C022A3290E300881219 /* MyGenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5C012A3290E300881219 /* MyGenresViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		5B5E5BFD2A32777D00881219 /* Whistle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whistle.swift; sourceTree = "<group>"; };
 		5B5E5BFF2A32804F00881219 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		5B5E5C012A3290E300881219 /* MyGenresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGenresViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */,
 				5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */,
 				5B5E5BFF2A32804F00881219 /* ResultsViewController.swift */,
+				5B5E5C012A3290E300881219 /* MyGenresViewController.swift */,
 				5B5E5BFD2A32777D00881219 /* Whistle.swift */,
 				5B5E5BE72A3156C300881219 /* Main.storyboard */,
 				5B5E5BEA2A3156C500881219 /* Assets.xcassets */,
@@ -164,6 +167,7 @@
 				5B5E5C002A32804F00881219 /* ResultsViewController.swift in Sources */,
 				5B5E5BF62A31744200881219 /* RecordWhistleViewController.swift in Sources */,
 				5B5E5BFA2A32658C00881219 /* AddCommentsViewController.swift in Sources */,
+				5B5E5C022A3290E300881219 /* MyGenresViewController.swift in Sources */,
 				5B5E5BE42A3156C300881219 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
