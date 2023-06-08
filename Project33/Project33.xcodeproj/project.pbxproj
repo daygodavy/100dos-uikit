@@ -17,6 +17,7 @@
 		5B5E5BF82A325ECD00881219 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BF72A325ECD00881219 /* SelectGenreViewController.swift */; };
 		5B5E5BFA2A32658C00881219 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */; };
 		5B5E5BFC2A3268FC00881219 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */; };
+		5B5E5BFE2A32777D00881219 /* Whistle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BFD2A32777D00881219 /* Whistle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5B5E5BF72A325ECD00881219 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
 		5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
 		5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
+		5B5E5BFD2A32777D00881219 /* Whistle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whistle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				5B5E5BF72A325ECD00881219 /* SelectGenreViewController.swift */,
 				5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */,
 				5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */,
+				5B5E5BFD2A32777D00881219 /* Whistle.swift */,
 				5B5E5BE72A3156C300881219 /* Main.storyboard */,
 				5B5E5BEA2A3156C500881219 /* Assets.xcassets */,
 				5B5E5BEC2A3156C500881219 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5E5BFE2A32777D00881219 /* Whistle.swift in Sources */,
 				5B5E5BFC2A3268FC00881219 /* SubmitViewController.swift in Sources */,
 				5B5E5BE62A3156C300881219 /* ViewController.swift in Sources */,
 				5B5E5BE22A3156C300881219 /* AppDelegate.swift in Sources */,
