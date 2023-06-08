@@ -13,6 +13,7 @@
 		5B5E5BE92A3156C300881219 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5BE72A3156C300881219 /* Main.storyboard */; };
 		5B5E5BEB2A3156C500881219 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5BEA2A3156C500881219 /* Assets.xcassets */; };
 		5B5E5BEE2A3156C500881219 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5BEC2A3156C500881219 /* LaunchScreen.storyboard */; };
+		5B5E5BF62A31744200881219 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BF52A31744200881219 /* RecordWhistleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5B5E5BEA2A3156C500881219 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5E5BED2A3156C500881219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B5E5BEF2A3156C500881219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B5E5BF52A31744200881219 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				5B5E5BE12A3156C300881219 /* AppDelegate.swift */,
 				5B5E5BE32A3156C300881219 /* SceneDelegate.swift */,
 				5B5E5BE52A3156C300881219 /* ViewController.swift */,
+				5B5E5BF52A31744200881219 /* RecordWhistleViewController.swift */,
 				5B5E5BE72A3156C300881219 /* Main.storyboard */,
 				5B5E5BEA2A3156C500881219 /* Assets.xcassets */,
 				5B5E5BEC2A3156C500881219 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				5B5E5BE62A3156C300881219 /* ViewController.swift in Sources */,
 				5B5E5BE22A3156C300881219 /* AppDelegate.swift in Sources */,
+				5B5E5BF62A31744200881219 /* RecordWhistleViewController.swift in Sources */,
 				5B5E5BE42A3156C300881219 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
