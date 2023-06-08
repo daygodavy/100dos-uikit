@@ -14,6 +14,10 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var whistleRecorder: AVAudioRecorder!
+    
+    var playButton: UIButton!
+    
+    var whistlePlayer: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +70,15 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
         stackView.addArrangedSubview(recordButton)
+        
+        playButton = UIButton()
+        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.setTitle("Tap to Play", for: .normal)
+        playButton.isHidden = true
+        playButton.alpha = 0
+        playButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        playButton.addTarget(self, action: #selector(playTapped), for: .touchUpInside)
+        stackView.addArrangedSubview(playButton)
     }
     
     func loadFailUI() {
@@ -107,8 +120,23 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         whistleRecorder.stop()
         whistleRecorder = nil
         
+//        if playButton.isHidden {
+//            UIView.animate(withDuration: 0.35) { [unowned self] in
+//                self.playButton.isHidden = false
+//                self.playButton.alpha = 1
+//            }
+//        }
+        
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
+            
+            if playButton.isHidden {
+                UIView.animate(withDuration: 0.35) { [unowned self] in
+                    self.playButton.isHidden = false
+                    self.playButton.alpha = 1
+                }
+            }
+            
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextTapped))
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
@@ -128,13 +156,35 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     @objc func recordTapped() {
         if whistleRecorder == nil {
             startRecording()
+            
+            if !playButton.isHidden {
+                UIView.animate(withDuration: 0.35) { [unowned self] in
+                    self.playButton.isHidden = true
+                    self.playButton.alpha = 0
+                }
+            }
+            
         } else {
             finishRecording(success: true)
         }
     }
     
     @objc func nextTapped() {
+        let vc = SelectGenreViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func playTapped() {
+        let audioURL = RecordWhistleViewController.getWhistleURL()
         
+        do {
+            whistlePlayer = try AVAudioPlayer(contentsOf: audioURL)
+            whistlePlayer.play()
+        } catch {
+            let ac = UIAlertController(title: "Playback failed", message: "There was a problem playing your whistle; please try re-recording.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     class func getDocumentsDirectory() -> URL {
@@ -146,15 +196,5 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     class func getWhistleURL() -> URL {
         return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
