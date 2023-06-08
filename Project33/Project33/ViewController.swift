@@ -45,6 +45,12 @@ class ViewController: UITableViewController {
         return self.whistles.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ResultsViewController()
+        vc.whistle = whistles[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func addWhistle() {
         let vc = RecordWhistleViewController()
         navigationController?.pushViewController(vc, animated: true)
