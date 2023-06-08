@@ -12,14 +12,6 @@ class AddCommentsViewController: UIViewController, UITextViewDelegate {
     
     var comments: UITextView!
     let placeholder = "If you have any additional comments that might help identify your tune, enter them here"
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "Comments"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(submitTapped))
-        comments.text = placeholder
-    }
     
     override func loadView() {
         view = UIView()
@@ -35,6 +27,14 @@ class AddCommentsViewController: UIViewController, UITextViewDelegate {
         comments.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         comments.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         comments.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Comments"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(submitTapped))
+        comments.text = placeholder
     }
     
     @objc func submitTapped() {

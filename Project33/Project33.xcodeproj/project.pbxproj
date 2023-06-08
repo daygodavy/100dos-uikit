@@ -16,6 +16,7 @@
 		5B5E5BF62A31744200881219 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BF52A31744200881219 /* RecordWhistleViewController.swift */; };
 		5B5E5BF82A325ECD00881219 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BF72A325ECD00881219 /* SelectGenreViewController.swift */; };
 		5B5E5BFA2A32658C00881219 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */; };
+		5B5E5BFC2A3268FC00881219 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5B5E5BF52A31744200881219 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
 		5B5E5BF72A325ECD00881219 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
 		5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
+		5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +69,12 @@
 				5B5E5BE52A3156C300881219 /* ViewController.swift */,
 				5B5E5BF52A31744200881219 /* RecordWhistleViewController.swift */,
 				5B5E5BF72A325ECD00881219 /* SelectGenreViewController.swift */,
+				5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */,
+				5B5E5BFB2A3268FC00881219 /* SubmitViewController.swift */,
 				5B5E5BE72A3156C300881219 /* Main.storyboard */,
 				5B5E5BEA2A3156C500881219 /* Assets.xcassets */,
 				5B5E5BEC2A3156C500881219 /* LaunchScreen.storyboard */,
 				5B5E5BEF2A3156C500881219 /* Info.plist */,
-				5B5E5BF92A32658C00881219 /* AddCommentsViewController.swift */,
 			);
 			path = Project33;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5E5BFC2A3268FC00881219 /* SubmitViewController.swift in Sources */,
 				5B5E5BE62A3156C300881219 /* ViewController.swift in Sources */,
 				5B5E5BE22A3156C300881219 /* AppDelegate.swift in Sources */,
 				5B5E5BF82A325ECD00881219 /* SelectGenreViewController.swift in Sources */,

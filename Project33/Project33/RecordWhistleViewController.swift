@@ -18,6 +18,24 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     var playButton: UIButton!
     
     var whistlePlayer: AVAudioPlayer!
+    
+    override func loadView() {
+        view = UIView()
+        
+        view.backgroundColor = UIColor.gray
+        
+        stackView = UIStackView()
+        stackView.spacing = 30
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = UIStackView.Distribution.fillEqually
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        view.addSubview(stackView)
+        
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,24 +61,6 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
             self.loadFailUI()
         }
         
-    }
-    
-    override func loadView() {
-        view = UIView()
-        
-        view.backgroundColor = UIColor.gray
-        
-        stackView = UIStackView()
-        stackView.spacing = 30
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = UIStackView.Distribution.fillEqually
-        stackView.alignment = .center
-        stackView.axis = .vertical
-        view.addSubview(stackView)
-        
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     func loadRecordingUI() {
@@ -119,13 +119,6 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         
         whistleRecorder.stop()
         whistleRecorder = nil
-        
-//        if playButton.isHidden {
-//            UIView.animate(withDuration: 0.35) { [unowned self] in
-//                self.playButton.isHidden = false
-//                self.playButton.alpha = 1
-//            }
-//        }
         
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
