@@ -22,7 +22,7 @@ class Board: NSObject, GKGameModel {
     
     var currentPlayer: Player
     
-    var pleyers: [GKGameModelPlayer]? {
+    var players: [GKGameModelPlayer]? {
         return Player.allPlayers
     }
     

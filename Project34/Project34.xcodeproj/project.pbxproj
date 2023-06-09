@@ -46,8 +46,6 @@
 		5B5E5C032A33A46100881219 = {
 			isa = PBXGroup;
 			children = (
-				5B5E5C272A33E1FC00881219 /* Move.swift */,
-				5B5E5C252A33C8D800881219 /* Player.swift */,
 				5B5E5C0E2A33A46100881219 /* Project34 */,
 				5B5E5C0D2A33A46100881219 /* Products */,
 			);
@@ -68,6 +66,8 @@
 				5B5E5C112A33A46100881219 /* SceneDelegate.swift */,
 				5B5E5C132A33A46100881219 /* ViewController.swift */,
 				5B5E5C232A33ACDB00881219 /* Board.swift */,
+				5B5E5C252A33C8D800881219 /* Player.swift */,
+				5B5E5C272A33E1FC00881219 /* Move.swift */,
 				5B5E5C152A33A46100881219 /* Main.storyboard */,
 				5B5E5C182A33A46300881219 /* Assets.xcassets */,
 				5B5E5C1A2A33A46300881219 /* LaunchScreen.storyboard */,
