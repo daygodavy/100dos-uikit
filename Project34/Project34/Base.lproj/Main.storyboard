@@ -96,7 +96,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="GVp-TW-Se2"/>
                     <connections>
-                        <outletCollection property="columnButtons" destination="UW2-At-yJl" collectionClass="NSMutableArray" id="MQD-nU-VTU"/>
+                        <outletCollection property="columnButtons" destination="DSi-49-bmI" collectionClass="NSMutableArray" id="cvk-15-rlt"/>
+                        <outletCollection property="columnButtons" destination="VLj-9B-qjA" collectionClass="NSMutableArray" id="hci-GO-OvN"/>
+                        <outletCollection property="columnButtons" destination="huk-on-5st" collectionClass="NSMutableArray" id="lra-7B-wSF"/>
+                        <outletCollection property="columnButtons" destination="UW2-At-yJl" collectionClass="NSMutableArray" id="Ge2-jB-t1T"/>
+                        <outletCollection property="columnButtons" destination="z8v-Lr-ACn" collectionClass="NSMutableArray" id="KHo-5t-wIZ"/>
+                        <outletCollection property="columnButtons" destination="Kc7-h3-NqJ" collectionClass="NSMutableArray" id="HX2-l0-G2h"/>
+                        <outletCollection property="columnButtons" destination="0rN-Lu-rHs" collectionClass="NSMutableArray" id="7xE-6m-qd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
