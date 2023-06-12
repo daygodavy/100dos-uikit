@@ -15,8 +15,14 @@ enum GameState {
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var player: SKSpriteNode!
-    
     var scoreLabel: SKLabelNode!
+    var backgroundMusic: SKAudioNode!
+    var logo: SKSpriteNode!
+    var gameOver: SKSpriteNode!
+    var gameState = GameState.showingLogo
+    let rockTexture = SKTexture(imageNamed: "rock")
+    var rockPhysics: SKPhysicsBody!
+    let explosion = SKEmitterNode(fileNamed: "PlayerExplosion")
     
     var score = 0 {
         didSet {
@@ -24,19 +30,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    var backgroundMusic: SKAudioNode!
-    
-    var logo: SKSpriteNode!
-    var gameOver: SKSpriteNode!
-    
-    var gameState = GameState.showingLogo
-    
     override func didMove(to view: SKView) {
         createPlayer()
         createSky()
         createBackground()
         createGround()
-//        startRocks()
         createScore()
         createLogos()
         
@@ -47,6 +45,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             backgroundMusic = SKAudioNode(url: musicURL)
             addChild(backgroundMusic)
         }
+        
+        rockPhysics = SKPhysicsBody(texture: rockTexture, size: rockTexture.size())
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -209,13 +209,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let rockTexture = SKTexture(imageNamed: "rock")
         
         let topRock = SKSpriteNode(texture: rockTexture)
-        topRock.physicsBody = SKPhysicsBody(texture: rockTexture, size: rockTexture.size())
+        topRock.physicsBody = rockPhysics.copy() as? SKPhysicsBody
         topRock.physicsBody?.isDynamic = false
         topRock.zRotation = .pi
         topRock.xScale = -1.0
         
         let bottomRock = SKSpriteNode(texture: rockTexture)
-        bottomRock.physicsBody = SKPhysicsBody(texture: rockTexture, size: rockTexture.size())
+        bottomRock.physicsBody = rockPhysics.copy() as? SKPhysicsBody
         bottomRock.physicsBody?.isDynamic = false
         
         topRock.zPosition = -20
