@@ -20,6 +20,8 @@ class ViewController: UITableViewController {
         
         // loads the saved database if it exists, or creates it otherwise
         container.loadPersistentStores { storeDescription, error in
+            self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+            
             if let error = error {
                 print("Unresolved error: \(error)")
             }
