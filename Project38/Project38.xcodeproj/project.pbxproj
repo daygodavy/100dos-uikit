@@ -15,6 +15,7 @@
 		5B5E5CD02A3919B500881219 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5CCE2A3919B500881219 /* LaunchScreen.storyboard */; };
 		5B5E5CD82A3919F800881219 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CD72A3919F800881219 /* SwiftyJSON.swift */; };
 		5B5E5CDA2A391B4200881219 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CD92A391B4200881219 /* DetailViewController.swift */; };
+		5B5E5CDD2A391DF500881219 /* Project38.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CDB2A391DF500881219 /* Project38.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5B5E5CD12A3919B500881219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B5E5CD72A3919F800881219 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../HackingWithSwift-main/Classic/project38-files/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		5B5E5CD92A391B4200881219 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5B5E5CDC2A391DF500881219 /* Project38.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project38.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				5B5E5CC52A3919B300881219 /* SceneDelegate.swift */,
 				5B5E5CC72A3919B300881219 /* ViewController.swift */,
 				5B5E5CD92A391B4200881219 /* DetailViewController.swift */,
+				5B5E5CDB2A391DF500881219 /* Project38.xcdatamodeld */,
 				5B5E5CC92A3919B300881219 /* Main.storyboard */,
 				5B5E5CCC2A3919B500881219 /* Assets.xcassets */,
 				5B5E5CCE2A3919B500881219 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				5B5E5CC42A3919B300881219 /* AppDelegate.swift in Sources */,
 				5B5E5CDA2A391B4200881219 /* DetailViewController.swift in Sources */,
 				5B5E5CC62A3919B300881219 /* SceneDelegate.swift in Sources */,
+				5B5E5CDD2A391DF500881219 /* Project38.xcdatamodeld in Sources */,
 				5B5E5CD82A3919F800881219 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5B5E5CDB2A391DF500881219 /* Project38.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B5E5CDC2A391DF500881219 /* Project38.xcdatamodel */,
+			);
+			currentVersion = 5B5E5CDC2A391DF500881219 /* Project38.xcdatamodel */;
+			path = Project38.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B5E5CB82A3919B300881219 /* Project object */;
 }
