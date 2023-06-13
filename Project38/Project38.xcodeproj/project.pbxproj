@@ -16,6 +16,8 @@
 		5B5E5CD82A3919F800881219 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CD72A3919F800881219 /* SwiftyJSON.swift */; };
 		5B5E5CDA2A391B4200881219 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CD92A391B4200881219 /* DetailViewController.swift */; };
 		5B5E5CDD2A391DF500881219 /* Project38.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CDB2A391DF500881219 /* Project38.xcdatamodeld */; };
+		5B5E5CE02A39258700881219 /* Commit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CDE2A39258700881219 /* Commit+CoreDataClass.swift */; };
+		5B5E5CE12A39258700881219 /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CDF2A39258700881219 /* Commit+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		5B5E5CD72A3919F800881219 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../HackingWithSwift-main/Classic/project38-files/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		5B5E5CD92A391B4200881219 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B5E5CDC2A391DF500881219 /* Project38.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project38.xcdatamodel; sourceTree = "<group>"; };
+		5B5E5CDE2A39258700881219 /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5B5E5CDF2A39258700881219 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		5B5E5CC22A3919B300881219 /* Project38 */ = {
 			isa = PBXGroup;
 			children = (
+				5B5E5CDE2A39258700881219 /* Commit+CoreDataClass.swift */,
+				5B5E5CDF2A39258700881219 /* Commit+CoreDataProperties.swift */,
 				5B5E5CC32A3919B300881219 /* AppDelegate.swift */,
 				5B5E5CC52A3919B300881219 /* SceneDelegate.swift */,
 				5B5E5CC72A3919B300881219 /* ViewController.swift */,
@@ -148,10 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5E5CC82A3919B300881219 /* ViewController.swift in Sources */,
+				5B5E5CE02A39258700881219 /* Commit+CoreDataClass.swift in Sources */,
 				5B5E5CC42A3919B300881219 /* AppDelegate.swift in Sources */,
 				5B5E5CDA2A391B4200881219 /* DetailViewController.swift in Sources */,
 				5B5E5CC62A3919B300881219 /* SceneDelegate.swift in Sources */,
 				5B5E5CDD2A391DF500881219 /* Project38.xcdatamodeld in Sources */,
+				5B5E5CE12A39258700881219 /* Commit+CoreDataProperties.swift in Sources */,
 				5B5E5CD82A3919F800881219 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
