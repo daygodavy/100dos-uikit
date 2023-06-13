@@ -30,6 +30,7 @@ class ViewController: UIViewController {
             self.view.backgroundColor = UIColor.blue
         })
         
+        playMusic()
     }
     
     @objc func loadCards() {
@@ -128,6 +129,16 @@ class ViewController: UIViewController {
         particleEmitter.emitterCells = [cell]
         
         gradientView.layer.addSublayer(particleEmitter)
+    }
+    
+    func playMusic() {
+        if let musicURL = Bundle.main.url(forResource: "PhantomFromSpace", withExtension: "mp3") {
+            if let audioPlayer = try? AVAudioPlayer(contentsOf: musicURL) {
+                music = audioPlayer
+                music.numberOfLoops = -1
+                music.play()
+            }
+        }
     }
 }
 
