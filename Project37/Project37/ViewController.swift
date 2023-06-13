@@ -10,7 +10,8 @@ import AVFoundation
 import UIKit
 import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
+    
     @IBOutlet var cardContainer: UIView!
     @IBOutlet var gradientView: GradientView!
     var allCards = [CardViewController]()
@@ -31,6 +32,22 @@ class ViewController: UIViewController {
         })
         
         playMusic()
+        
+        if (WCSession.isSupported()) {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let instructions = "Please ensure your Apple Watch is configured correctly. On your iPhone, launch Apple's 'Watch' configuration app then choose General > Wake Screen. On that screen, please disable Wake Screen On Wrist Raise, then select Wake For 70 Seconds. On your Apple Watch, please swipe up on your watch face and enable Silent Mode. You're done!"
+        
+        let ac = UIAlertController(title: "Adjust your settings", message: instructions, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "I'm Ready", style: .default))
+        present(ac, animated: true)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -46,6 +63,10 @@ class ViewController: UIViewController {
                         card.front.image = UIImage(named: "cardStar")
                         card.isCorrect = true
                     }
+                }
+                
+                if card.isCorrect {
+                    sendWatchMessage()
                 }
             }
         }
@@ -157,6 +178,37 @@ class ViewController: UIViewController {
                 music.play()
             }
         }
+    }
+    
+    func sendWatchMessage() {
+        let currentTime = CFAbsoluteTimeGetCurrent()
+        
+        // if less than half a second has passed, bail out
+        if lastMessage + 0.5 > currentTime {
+            return
+        }
+        
+        // send a message to the watch if it's reachable
+        if (WCSession.default.isReachable) {
+            // this is a meaningless message, but it's enough for our purposes
+            let message = ["Message": "Hello"]
+            WCSession.default.sendMessage(message, replyHandler: nil)
+        }
+        
+        // update our rate limiting property
+        lastMessage = CFAbsoluteTimeGetCurrent()
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        <#code#>
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        <#code#>
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        <#code#>
     }
 }
 
