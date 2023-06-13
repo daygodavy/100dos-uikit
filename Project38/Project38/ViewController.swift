@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
     var container: NSPersistentContainer!
     var commits = [Commit]()
+    var commitPredicate: NSPredicate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,11 @@ class ViewController: UITableViewController {
             }
         }
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(changeFilter))
+        
         performSelector(inBackground: #selector(fetchCommits), with: nil)
         
-        loadSaveData()
+        loadSavedData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,9 +70,40 @@ class ViewController: UITableViewController {
                 }
                 
                 self.saveContext()
-                self.loadSaveData()
+                self.loadSavedData()
             }
         }
+    }
+    
+    @objc func changeFilter() {
+        let ac = UIAlertController(title: "Filter commits...", message: nil, preferredStyle: .actionSheet)
+        
+        ac.addAction(UIAlertAction(title: "Show only fixes", style: .default) { [unowned self] _ in
+            // CONTAINS[c]: matches objects containing specified string in their message and is case-insensitive
+            self.commitPredicate = NSPredicate(format: "message CONTAINS[c] 'fix'")
+            self.loadSavedData()
+        })
+        
+        // BEGINSWITH: similar to CONTAINS except matching text but be prefix of string
+        // NOT: flips match around (objects that don't begin with "...")
+        ac.addAction(UIAlertAction(title: "Ignore Pull Requests", style: .default) { [unowned self] _ in
+            self.commitPredicate = NSPredicate(format: "NOT message BEGINSWITH 'Merge pull request'")
+            self.loadSavedData()
+        })
+        
+        ac.addAction(UIAlertAction(title: "Show only recent", style: .default) { [unowned self] _ in
+            let twelveHoursAgo = Date().addingTimeInterval(-43200)
+            self.commitPredicate = NSPredicate(format: "date > %@", twelveHoursAgo as NSDate)
+            self.loadSavedData()
+        })
+        
+        ac.addAction(UIAlertAction(title: "Show all commits", style: .default) { [unowned self] _ in
+            self.commitPredicate = nil
+            self.loadSavedData()
+        })
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
     }
     
     func saveContext() {
@@ -91,10 +125,12 @@ class ViewController: UITableViewController {
         commit.date = formatter.date(from: json["commit"]["committer"]["date"].stringValue) ?? Date()
     }
 
-    func loadSaveData() {
+    func loadSavedData() {
         let request = Commit.createFetchRequest()
         let sort = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sort]
+        
+        request.predicate = commitPredicate
         
         do {
             commits = try container.viewContext.fetch(request)
