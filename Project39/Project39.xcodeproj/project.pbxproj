@@ -16,8 +16,8 @@
 		5B5E5D0A2A3A497400881219 /* Project39Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5D092A3A497400881219 /* Project39Tests.swift */; };
 		5B5E5D142A3A497400881219 /* Project39UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5D132A3A497400881219 /* Project39UITests.swift */; };
 		5B5E5D162A3A497400881219 /* Project39UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5D152A3A497400881219 /* Project39UITestsLaunchTests.swift */; };
-		5B5E5D232A3A499000881219 /* plays.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5D222A3A499000881219 /* plays.txt */; };
 		5B5E5D252A3A4B7900881219 /* PlayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5D242A3A4B7900881219 /* PlayData.swift */; };
+		5B5E5D272A3A54C200881219 /* plays.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5D262A3A54C200881219 /* plays.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		5B5E5D0F2A3A497400881219 /* Project39UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project39UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5E5D132A3A497400881219 /* Project39UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project39UITests.swift; sourceTree = "<group>"; };
 		5B5E5D152A3A497400881219 /* Project39UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project39UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5B5E5D222A3A499000881219 /* plays.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plays.txt; sourceTree = "<group>"; };
 		5B5E5D242A3A4B7900881219 /* PlayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayData.swift; sourceTree = "<group>"; };
+		5B5E5D262A3A54C200881219 /* plays.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = plays.txt; path = "../../HackingWithSwift-main/Classic/project39-files/plays.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				5B5E5CFB2A3A497400881219 /* Assets.xcassets */,
 				5B5E5CFD2A3A497400881219 /* LaunchScreen.storyboard */,
 				5B5E5D002A3A497400881219 /* Info.plist */,
-				5B5E5D222A3A499000881219 /* plays.txt */,
+				5B5E5D262A3A54C200881219 /* plays.txt */,
 			);
 			path = Project39;
 			sourceTree = "<group>";
@@ -237,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5E5D272A3A54C200881219 /* plays.txt in Resources */,
 				5B5E5CFF2A3A497400881219 /* LaunchScreen.storyboard in Resources */,
 				5B5E5CFC2A3A497400881219 /* Assets.xcassets in Resources */,
 				5B5E5CFA2A3A497100881219 /* Main.storyboard in Resources */,
@@ -254,7 +255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B5E5D232A3A499000881219 /* plays.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
