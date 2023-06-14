@@ -17,6 +17,7 @@
 		5B5E5D142A3A497400881219 /* Project39UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5D132A3A497400881219 /* Project39UITests.swift */; };
 		5B5E5D162A3A497400881219 /* Project39UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5D152A3A497400881219 /* Project39UITestsLaunchTests.swift */; };
 		5B5E5D232A3A499000881219 /* plays.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E5D222A3A499000881219 /* plays.txt */; };
+		5B5E5D252A3A4B7900881219 /* PlayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5D242A3A4B7900881219 /* PlayData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		5B5E5D132A3A497400881219 /* Project39UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project39UITests.swift; sourceTree = "<group>"; };
 		5B5E5D152A3A497400881219 /* Project39UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project39UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5B5E5D222A3A499000881219 /* plays.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plays.txt; sourceTree = "<group>"; };
+		5B5E5D242A3A4B7900881219 /* PlayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				5B5E5CF22A3A497100881219 /* AppDelegate.swift */,
 				5B5E5CF42A3A497100881219 /* SceneDelegate.swift */,
 				5B5E5CF62A3A497100881219 /* ViewController.swift */,
+				5B5E5D242A3A4B7900881219 /* PlayData.swift */,
 				5B5E5CF82A3A497100881219 /* Main.storyboard */,
 				5B5E5CFB2A3A497400881219 /* Assets.xcassets */,
 				5B5E5CFD2A3A497400881219 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5E5CF72A3A497100881219 /* ViewController.swift in Sources */,
+				5B5E5D252A3A4B7900881219 /* PlayData.swift in Sources */,
 				5B5E5CF32A3A497100881219 /* AppDelegate.swift in Sources */,
 				5B5E5CF52A3A497100881219 /* SceneDelegate.swift in Sources */,
 			);
