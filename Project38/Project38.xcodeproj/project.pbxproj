@@ -18,6 +18,8 @@
 		5B5E5CDD2A391DF500881219 /* Project38.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CDB2A391DF500881219 /* Project38.xcdatamodeld */; };
 		5B5E5CE02A39258700881219 /* Commit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CDE2A39258700881219 /* Commit+CoreDataClass.swift */; };
 		5B5E5CE12A39258700881219 /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CDF2A39258700881219 /* Commit+CoreDataProperties.swift */; };
+		5B5E5CE42A393BA900881219 /* Author+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CE22A393BA900881219 /* Author+CoreDataClass.swift */; };
+		5B5E5CE52A393BA900881219 /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5CE32A393BA900881219 /* Author+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5B5E5CDC2A391DF500881219 /* Project38.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project38.xcdatamodel; sourceTree = "<group>"; };
 		5B5E5CDE2A39258700881219 /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		5B5E5CDF2A39258700881219 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5B5E5CE22A393BA900881219 /* Author+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5B5E5CE32A393BA900881219 /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 		5B5E5CC22A3919B300881219 /* Project38 */ = {
 			isa = PBXGroup;
 			children = (
+				5B5E5CE22A393BA900881219 /* Author+CoreDataClass.swift */,
+				5B5E5CE32A393BA900881219 /* Author+CoreDataProperties.swift */,
 				5B5E5CDE2A39258700881219 /* Commit+CoreDataClass.swift */,
 				5B5E5CDF2A39258700881219 /* Commit+CoreDataProperties.swift */,
 				5B5E5CC32A3919B300881219 /* AppDelegate.swift */,
@@ -159,7 +165,9 @@
 				5B5E5CDA2A391B4200881219 /* DetailViewController.swift in Sources */,
 				5B5E5CC62A3919B300881219 /* SceneDelegate.swift in Sources */,
 				5B5E5CDD2A391DF500881219 /* Project38.xcdatamodeld in Sources */,
+				5B5E5CE42A393BA900881219 /* Author+CoreDataClass.swift in Sources */,
 				5B5E5CE12A39258700881219 /* Commit+CoreDataProperties.swift in Sources */,
+				5B5E5CE52A393BA900881219 /* Author+CoreDataProperties.swift in Sources */,
 				5B5E5CD82A3919F800881219 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
